@@ -7,8 +7,8 @@ angular.module('app.controllers', [
         });
     }])
     .controller('SinglePostController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
+      $scope.post = {};
         $http.get('data/posts.json').then(function (data){
           $scope.post = data.data[$routeParams.id];
-          console.log(data);
         });
     }]);
