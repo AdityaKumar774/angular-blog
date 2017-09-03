@@ -11,4 +11,9 @@ angular.module('app.controllers', [
         $http.get('data/posts.json').then(function (data){
           $scope.post = data.data[$routeParams.id];
         });
+    }])
+    .controller('PageController', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams){
+      $http.get('data/pages.json').then(function(data){
+        $scope.page = data.data[$routeParams.id];
+      });
     }]);
